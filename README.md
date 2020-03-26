@@ -1,2 +1,2 @@
 # snake
-classic snake game
+игра змiйка (класическая)
