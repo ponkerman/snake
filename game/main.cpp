@@ -12,6 +12,6 @@ int main(int argc, char *argv[])
     Field field;
     field.init();
     field.output();
-
+    cout << "FFFF" << endl;
     return 0;
 }
