@@ -2,7 +2,7 @@
 
 class bonus {
 private:
-	pair<int, int> coordinates;
+	std::pair<int, int> coordinates;
 public:
 	bonus() {
 		coordinates.first = 15;
