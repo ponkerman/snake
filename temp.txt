@@ -1,0 +1,1 @@
+g++ main.cpp field.cpp bonus.cpp snake.cpp -o snake.exe

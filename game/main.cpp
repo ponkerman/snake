@@ -1,5 +1,17 @@
+#include <iostream>
+#include <conio.h>
+
+#include "field.h"
+#include "snake.h"
+#include "bonus.h"
+
+using namespace std;
+
 int main(int argc, char *argv[])
 {
-  
-  return 0;
+    Field field;
+    field.init();
+    field.output();
+
+    return 0;
 }
