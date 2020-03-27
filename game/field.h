@@ -1,13 +1,7 @@
 #ifndef __FIELD_H__
 #define __FIELD_H__
 
-#define HEIGHT 18
-#define WIDTH 18
-
-#include <iostream>
-#include <conio.h>
-
-using namespace std;
+#include "constants.h"
 
 class Field
 {
