@@ -13,7 +13,7 @@ class Snake
 public:
 	Snake();
 	~Snake();
-	void init(int, int, char);
+	int init(int, int, int, int);
 private:
 	vector<pair<int, int>> coord;
 };
