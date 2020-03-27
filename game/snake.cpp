@@ -63,3 +63,31 @@ tmp->prev->next = tmp;
 
 curLen += 1;
 }
+
+int Snake::move(int dir){
+	partition *tmp = new partition;
+	tmp = tail;
+	do{
+		tmp->x = tmp->prev->x;
+		tmp->y = tmp->prev->y;
+		tmp = tmp->prev;
+	} while (tmp != head);
+
+	switch (dir){
+		case UP:
+			head->y += 1;
+			break;
+		case DOWN:
+			head->y -= 1;
+			break;
+		case LEFT:
+			head->x -= 1;
+			break;
+		case RIGHT:
+			head->x += 1;
+			break;
+		default:
+			return -1;
+			break;
+	}
+}
