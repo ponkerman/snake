@@ -8,31 +8,14 @@ class Snake
 public:
 	Snake();
 	~Snake();
-	int init(int, int);
-	void addPartition();
+	int init(int x = -1, int y = -1);
 	int move(int);
+	int getLen();
+	list<coord*>* getCoordList();
 private:
-	struct partition{
-		int x;
-		int y;
-		partition* next;
-		partition* prev;
-	};
-	partition* head = nullptr;
-	partition* tail = nullptr;
+	list<coord*> *snake_coord;
 	int curLen = 0;
-
-	int cellCheck(int x, int y){
-		if (x == 0 || y == 0 || x == WIDTH || y == HEIGHT)
-			return -1;
-		partition* curPart = head;
-		for(int i = 0; i < curLen; i++){
-			if (curPart->x == x && curPart->y == y)
-				return -1;
-			curPart = curPart->next;
-		}
-		return 1;
-	}
+	void addPartition();
 };
 
 

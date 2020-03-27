@@ -14,7 +14,17 @@
 #include <conio.h>
 #include <vector>
 #include <utility>
+#include <time.h>
+#include <list>
+#include <algorithm>
 
 using namespace std;
+
+typedef double myType;
+
+typedef struct Coordinates{
+		int x;
+		int y;
+} coord;
 
 #endif
