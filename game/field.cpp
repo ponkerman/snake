@@ -1,5 +1,5 @@
 #include "field.h"
-#include "constants.h"
+
 
 Field::Field()
 {
@@ -20,11 +20,14 @@ void Field::init(char fill_char)
         screen[i][0] = '#';
     for(int i = 0; i < HEIGHT; i++)
         screen[i][WIDTH-1] = '#';
-    myType a;
     snake->init();
-    list<coord*>* snakeCoord = snake->getCoordList();
-    for_each(snakeCoord->begin(), snakeCoord->end(), [&screen = screen, fill_char](coord* it){screen[it->x][it->y] = fill_char;});
+    
+    vector<coord> snakeCoord = snake->getCoordList();
 
+    for_each(snakeCoord.begin(), snakeCoord.end(), [](coord it){cout << it.x << ' ' << it.y << '\n';});
+
+    for_each(snakeCoord.begin(), snakeCoord.end(), [&screen = screen, fill_char](coord it){screen[it.x][it.y] = '@';});
+    
 
 }
 

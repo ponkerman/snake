@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     Field field;
  
     field.init();
- 
+    
     field.output();
     
     

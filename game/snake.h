@@ -11,13 +11,12 @@ public:
 	int init(int x = -1, int y = -1);
 	int move(int);
 	int getLen();
-	list<coord*>* getCoordList();
+	vector<coord> getCoordList();
 private:
-	list<coord*> *snake_coord;
+	bool check_coord(int, int);
+	vector<coord> *snake_coord;
 	int curLen = 0;
 	void addPartition();
 };
-
-
 
 #endif

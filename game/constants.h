@@ -10,21 +10,22 @@
 #define LEFT 3
 #define RIGHT 4
 
+#include <list>
 #include <iostream>
 #include <conio.h>
 #include <vector>
 #include <utility>
-#include <time.h>
-#include <list>
 #include <algorithm>
+#include <iterator>
+#include <string>
 
 using namespace std;
 
-typedef double myType;
+struct coord{
+	coord(int X, int Y){this->x = X; this->y = Y;}
+	int x;
+	int y;
+};
 
-typedef struct Coordinates{
-		int x;
-		int y;
-} coord;
 
 #endif
