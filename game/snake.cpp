@@ -50,7 +50,7 @@ int aaaa = snake_coord->capacity();
 --X;    Y;
 if(check_coord(X, Y)) {snake_coord->back().x = X; snake_coord->back().y = Y; return;}
 ++X;    --Y;
-if(check_coord(X, Y)) {snake_coord->back().x = X; snake_coord->back().y = Y;  return;}
+if(check_coord(X, Y)) {snake_coord->back().x = X; snake_coord->back().y = Y; return;}
 X;      Y+=2;
 if(check_coord(X, Y)) {snake_coord->back().x = X; snake_coord->back().y = Y; return;}
 ++X;    --Y;
@@ -64,12 +64,29 @@ cerr << "error: unable to add new part!\n";
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 int Snake::move(int dir){
-	coord prev = *(snake_coord->begin());
-	for_each(std::next(snake_coord->begin()), snake_coord->end(), [&prev](coord it){
-		it.x = prev.x;
-		it.y = prev.y;
-		prev = it;
-	});
+	/*
+	for_each(std::next(snake_coord->begin()), snake_coord->end(), [](coord it){
+		cout << "x: " << it.x << "\ty: " << it.y;
+		//it.x = std::prev(&it)->x;
+		//it.y = std::prev(&it)->y;
+		coord* tmp = &it;
+		tmp += 1;
+		cout << "\nprev: x: " << tmp->x << "\ty: " << tmp->y << '\n';
+		cout << "after: x: " << it.x << "\ty: " << it.y << "\n////////////////////////\n";
+	}); 
+	static coord tmp = *snake_coord->begin();
+	for(vector<coord>::iterator it = snake_coord->begin(); it != std::prev(snake_coord->end()); it++){
+		cout << "x: " << it->x << "\ty: " << it->y;
+		std::next(it)->x = tmp.x;
+		std::next(it)->y = tmp.y;
+		tmp = *next(it);
+		//cout << "\nprev: x: " << std::prev(it)->x << "\ty: " << std::prev(it)->y << '\n';
+		cout << "\nafter: x: " << it->x << "\ty: " << it->y << "\n////////////////////////\n";
+	}
+	*/
+	snake_coord->push_back(*snake_coord->begin());
+	std::rotate(snake_coord->rbegin(), snake_coord->rbegin() + 1, snake_coord->rend());
+	snake_coord->pop_back();
 
 	switch(dir){
 		case UP:

@@ -25,9 +25,7 @@ void Field::init(char fill_char)
     
     vector<coord> snakeCoord = snake->getCoordList();
 
-    //for_each(snakeCoord.begin(), snakeCoord.end(), [](coord it){cout << it.x << ' ' << it.y << '\n';});
-
-    for_each(snakeCoord.begin(), snakeCoord.end(), [&screen = screen](coord it){screen[it.x][it.y] = '@';});
+    for_each(snakeCoord.begin(), snakeCoord.end(), [&screen = screen](coord it){screen[it.x][it.y] = SNAKE_CHAR;});
     
 
 }

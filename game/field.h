@@ -13,7 +13,7 @@ private:
 public:
     Field();
     ~Field();
-    void init(char fill_char = 'O');
+    void init(char fill_char = FIELD_CHAR);
     void output();
     void update(int);
 };

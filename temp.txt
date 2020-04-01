@@ -1,1 +1,56 @@
 g++ -std=c++14 main.cpp field.cpp bonus.cpp snake.cpp -o snake.exe
+
+
+
+
+#include 
+#include 
+using namespace std;
+
+void fun1(int x) 
+{
+    cout << x << " ";
+    if (x % 2 == 0)
+    {
+        throw 100;
+    }
+}
+
+struct Class1 // object type function
+{           
+    void operator() (int x) 
+    {
+        cout << x << " ";
+        if (x % 2 == 0)
+        {
+            throw 100;
+        }            
+    }
+} myobject;
+
+int main() 
+{
+    vector v1;
+    v1.push_back(11);
+    v1.push_back(23);
+    v1.push_back(4);
+    v1.push_back(13);
+
+    try 
+    {
+        for_each(v1.begin(), v1.end(), fun1);        
+    } 
+    catch (int i) 
+    {
+        cout << endl << "Got exception...Value thrown is " << i << endl;
+    }
+    try 
+    {
+        for_each (v1.begin(), v1.end(), myobject);
+    } 
+    catch (int i) 
+    {
+        cout << endl << "Got exception...Value thrown is " << i << endl;
+    }    
+    return 0;
+}

@@ -16,6 +16,11 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "F:/compilers/minGW64/bin/gdb.exe",
+            "logging": {
+                "trace": false,
+                "traceResponse": false,
+                "engineLogging": false
+            },
             "setupCommands": [
                 {
                     "description": "Включить автоматическое форматирование для gdb",
