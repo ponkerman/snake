@@ -61,29 +61,33 @@ cerr << "error: unable to add new part!\n";
 }
 
 
-/*
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 int Snake::move(int dir){
-	partition *tmp = new partition;
-	tmp = tail;
-	do{
-		tmp.x = tmp.prev.x;
-		tmp.y = tmp.prev.y;
-		tmp = tmp.prev;
-	} while (tmp != head);
+	coord prev = *(snake_coord->begin());
+	for_each(std::next(snake_coord->begin()), snake_coord->end(), [&prev](coord it){
+		it.x = prev.x;
+		it.y = prev.y;
+		prev = it;
+	});
 
-	switch (dir){
+	switch(dir){
 		case UP:
-			head.y += 1;
+			//head.y += 1;
+			//snake_coord->at(0).y += 1;
+			snake_coord->at(0).x -= 1;
 			break;
 		case DOWN:
-			head.y -= 1;
+			//head.y -= 1;
+			snake_coord->at(0).x += 1;
 			break;
 		case LEFT:
-			head.x -= 1;
+			//head.x -= 1;
+			snake_coord->at(0).y -= 1;
 			break;
 		case RIGHT:
-			head.x += 1;
+			//head.x += 1;
+			snake_coord->at(0).y += 1;
 			break;
 		default:
 			return -1;
@@ -93,7 +97,7 @@ int Snake::move(int dir){
 }
 
 
-*/
+
 int Snake::getLen(){
 	return snake_coord->capacity();
 }

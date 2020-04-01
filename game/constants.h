@@ -1,8 +1,8 @@
 #ifndef __CONSTANTS_H__
 #define __CONSTANTS_H__
 
-#define HEIGHT 18
-#define WIDTH 18
+#define HEIGHT 10
+#define WIDTH 10
 #define START_LEN 4
 
 #define UP 1
@@ -17,7 +17,6 @@
 #include <utility>
 #include <algorithm>
 #include <iterator>
-#include <string>
 
 using namespace std;
 

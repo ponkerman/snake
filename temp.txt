@@ -1,1 +1,1 @@
-g++ main.cpp field.cpp bonus.cpp snake.cpp -o snake.exe
+g++ -std=c++14 main.cpp field.cpp bonus.cpp snake.cpp -o snake.exe

@@ -16,9 +16,11 @@ int main(int argc, char *argv[])
     
     field.output();
     
+    field.update(RIGHT);
     
-    
-    
+    cout << endl;
+
+    field.output();
 
     return 0;
 }

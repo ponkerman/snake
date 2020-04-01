@@ -9,12 +9,13 @@ class Field
 private:
     char screen[HEIGHT][WIDTH];
     Snake *snake;
+    char fill_char;
 public:
     Field();
     ~Field();
     void init(char fill_char = 'O');
     void output();
-    void update();
+    void update(int);
 };
 
 #endif
