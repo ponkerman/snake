@@ -1,23 +1,22 @@
 #ifndef __SNAKE_H__
 #define __SNAKE_H__
 
-#define START_LEN 4
+#include "constants.h"
 
-#include <vector>
-#include <utility>
-
-using namespace std;
-
-class Snake
+class Snake 
 {
 public:
 	Snake();
 	~Snake();
-	int init(int, int, int, int);
+	int init(int x = -1, int y = -1);
+	int move(int);
+	int getLen();
+	vector<coord> getCoordList();
 private:
-	vector<pair<int, int>> coord;
+	bool check_coord(int, int);
+	vector<coord> *snake_coord;
+	int curLen = 0;
+	void addPartition();
 };
-
-
 
 #endif
